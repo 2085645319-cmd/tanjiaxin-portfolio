@@ -1,0 +1,89 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { sitePath } from '../lib/sitePath';
+---
+
+<Layout
+  title="关于 — 谭佳欣（tanjiaxin）"
+  description="谭佳欣 — 中国传媒大学智能科学与技术专业；媒体融合与传播国家重点实验室直属实验班。"
+>
+  <article class="prose">
+    <h1>关于</h1>
+
+    <figure class="profile">
+      <img
+        class="profile-img"
+        src={sitePath('images/profile.jpg')}
+        alt="谭佳欣"
+        width={560}
+        height={700}
+        loading="eager"
+      />
+    </figure>
+
+    <div class="bio">
+      <p class="name-line"><strong>谭佳欣</strong>（<span class="mono">tanjiaxin</span>）</p>
+      <p>
+        中国传媒大学<strong>智能科学与技术</strong>专业本科在读。加入<strong>媒体融合与传播国家重点实验室</strong>直属实验班。
+      </p>
+      <p>
+        该实验室为国家科技部批准建设的四个「媒体融合与传播」类国家重点实验室之一，亦是其中<strong>唯一由高校作为依托单位</strong>的实验室。
+      </p>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .prose {
+    max-width: 36rem;
+  }
+
+  .prose h1 {
+    margin-top: 0;
+  }
+
+  .profile {
+    margin: 1.5rem 0 1.25rem;
+    padding: 0;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    max-width: 22rem;
+  }
+
+  .profile-img {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+    display: block;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+  }
+
+  .bio {
+    margin-top: 0.5rem;
+  }
+
+  .bio p {
+    margin: 0 0 1rem;
+    color: var(--muted);
+    line-height: 1.75;
+  }
+
+  .name-line {
+    margin: 0 0 1rem !important;
+    color: var(--text) !important;
+    font-size: 1.05rem;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.95em;
+  }
+
+  .bio strong {
+    color: var(--text);
+    font-weight: 650;
+  }
+</style>

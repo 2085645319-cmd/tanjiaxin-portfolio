@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import { sitePath } from '../lib/sitePath';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = '谭佳欣（tanjiaxin）— 视频作品集',
+  description = '谭佳欣的个人视频作品展示，作品托管于第三方平台，本站提供嵌入与聚合。',
+} = Astro.props;
+
+const canonicalURL = Astro.site
+  ? new URL(Astro.url.pathname, Astro.site)
+  : Astro.url;
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+    <title>{title}</title>
+    <link rel="icon" type="image/svg+xml" href={sitePath('favicon.svg')} />
+  </head>
+  <body>
+    <SiteHeader />
+    <main id="main">
+      <slot />
+    </main>
+    <SiteFooter />
+  </body>
+</html>

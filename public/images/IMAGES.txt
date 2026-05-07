@@ -1,0 +1,9 @@
+请将本地图片放入此文件夹，并使用下列文件名（路径已在项目中写好）：
+
+1. profile.jpg       — 个人形象照，用于「关于」页头像
+2. shanhai-baize.jpg —《山海经先导片——白泽》宣传图（首页卡片与详情占位）
+3. jingmo-fadian.jpg —《静默法典》宣传图
+
+若为 PNG，可把文件扩展名改为对应后缀，并同步修改：
+- src/pages/about.astro 中的 /images/profile.jpg
+- src/data/works.ts 中两条作品的 poster 字段

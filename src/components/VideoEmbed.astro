@@ -1,0 +1,95 @@
+---
+import { sitePath } from '../lib/sitePath';
+
+interface Props {
+  embedUrl: string;
+  poster: string;
+  title: string;
+  /** 无嵌入时覆盖层文案 */
+  pendingMessage?: string;
+}
+
+const { embedUrl, poster, title, pendingMessage = '视频嵌入链接稍后更新' } = Astro.props;
+const posterSrc = sitePath(poster.replace(/^\//, ''));
+const hasEmbed = Boolean(embedUrl?.trim());
+const label = `${title} — 视频播放`;
+---
+
+<div class="wrap">
+  {
+    hasEmbed ? (
+      <iframe
+        class="frame focus-ring"
+        src={embedUrl}
+        title={label}
+        loading="lazy"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      />
+    ) : (
+      <div class="pending">
+        <img src={posterSrc} alt={`${title} 宣传图`} class="poster" width={1280} height={720} loading="lazy" />
+        <div class="pending-overlay" role="status">
+          <p class="pending-text">{pendingMessage}</p>
+        </div>
+      </div>
+    )
+  }
+</div>
+
+<style>
+  .wrap {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--surface);
+  }
+
+  .frame {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+  }
+
+  .pending {
+    position: absolute;
+    inset: 0;
+    margin: 0;
+  }
+
+  .poster {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .pending-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: color-mix(in srgb, var(--bg) 45%, transparent);
+  }
+
+  .pending-text {
+    margin: 0;
+    max-width: 22rem;
+    padding: 0.85rem 1.15rem;
+    font-size: 0.98rem;
+    font-weight: 600;
+    line-height: 1.45;
+    text-align: center;
+    color: var(--text);
+    background: color-mix(in srgb, var(--surface) 92%, transparent);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+  }
+</style>

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="360" viewBox="0 0 640 360">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a22"/>
+      <stop offset="100%" stop-color="#2d3a66"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="360" fill="url(#g)"/>
+  <text x="50%" y="48%" dominant-baseline="middle" text-anchor="middle" fill="#ececf1" font-family="system-ui,sans-serif" font-size="28" font-weight="600">Poster · YouTube</text>
+  <text x="50%" y="58%" dominant-baseline="middle" text-anchor="middle" fill="#9898a8" font-family="system-ui,sans-serif" font-size="16">Replace with your frame (PNG/WebP)</text>
+</svg>

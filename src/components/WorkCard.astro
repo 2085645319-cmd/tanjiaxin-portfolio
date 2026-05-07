@@ -1,0 +1,105 @@
+---
+import type { Work } from '../data/works';
+import { sitePath } from '../lib/sitePath';
+
+interface Props {
+  work: Work;
+}
+
+const { work } = Astro.props;
+---
+
+<article class="card">
+  <a href={sitePath(`work/${work.slug}`)} class="thumb-link focus-ring">
+    <img src={sitePath(work.poster.replace(/^\//, ''))} alt={`${work.title} 宣传图`} width={640} height={360} loading="lazy" />
+    <span class="platform">{work.platformBadge}</span>
+  </a>
+  <div class="body">
+    <h2 class="title">
+      <a href={sitePath(`work/${work.slug}`)}>{work.title}</a>
+    </h2>
+    <p class="meta">
+      {work.category} · {work.period}
+    </p>
+    <p class="desc">{work.description}</p>
+    <a class="more" href={sitePath(`work/${work.slug}`)}>查看详情 →</a>
+  </div>
+</article>
+
+<style>
+  .card {
+    display: grid;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--surface);
+  }
+
+  @media (min-width: 640px) {
+    .card {
+      grid-template-columns: minmax(0, 280px) 1fr;
+      align-items: start;
+    }
+  }
+
+  .thumb-link {
+    position: relative;
+    display: block;
+    border-radius: calc(var(--radius) - 4px);
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .thumb-link img {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+
+  .platform {
+    position: absolute;
+    left: 0.5rem;
+    bottom: 0.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.04em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 6px;
+    background: color-mix(in srgb, var(--bg) 78%, transparent);
+    border: 1px solid var(--border);
+    color: var(--text);
+  }
+
+  .title {
+    margin: 0;
+    font-size: 1.15rem;
+  }
+
+  .title a {
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .title a:hover {
+    color: var(--accent);
+  }
+
+  .meta {
+    margin: 0.25rem 0 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .desc {
+    margin: 0.5rem 0 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .more {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+</style>

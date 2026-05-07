@@ -1,0 +1,96 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import VideoEmbed from '../../components/VideoEmbed.astro';
+import { works } from '../../data/works';
+import { sitePath } from '../../lib/sitePath';
+
+export function getStaticPaths() {
+  return works.map((work) => ({
+    params: { slug: work.slug },
+    props: { work },
+  }));
+}
+
+const { work } = Astro.props;
+const hasWatch = Boolean(work.watchUrl?.trim());
+const bottomMessage = hasWatch
+  ? null
+  : work.noWatchMessage ?? '观看链接稍后更新';
+---
+
+<Layout title={`${work.title} — 谭佳欣`} description={work.description}>
+  <article class="detail">
+    <p class="back">
+      <a href={sitePath('')} class="focus-ring">← 返回作品列表</a>
+    </p>
+    <header class="head">
+      <p class="meta">
+        {work.category} · {work.period} · {work.platformBadge}
+      </p>
+      <h1>{work.title}</h1>
+      <p class="desc">{work.description}</p>
+    </header>
+
+    <div class="player">
+      <VideoEmbed
+        embedUrl={work.embedUrl}
+        poster={work.poster}
+        title={work.title}
+        pendingMessage={work.pendingMessage}
+      />
+    </div>
+
+    <p class="fallback">
+      {
+        hasWatch ? (
+          <a href={work.watchUrl} class="focus-ring" target="_blank" rel="noopener noreferrer">
+            在原平台打开 →
+          </a>
+        ) : (
+          <span class="pending-link">{bottomMessage}</span>
+        )
+      }
+    </p>
+  </article>
+</Layout>
+
+<style>
+  .detail {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .back {
+    margin: 0 0 1.25rem;
+  }
+
+  .head .meta {
+    margin: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+
+  .head h1 {
+    margin: 0.35rem 0 0.75rem;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .desc {
+    margin: 0;
+    color: var(--muted);
+    max-width: 42rem;
+  }
+
+  .player {
+    margin: 1.75rem 0 1rem;
+  }
+
+  .fallback {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+
+  .pending-link {
+    color: var(--muted);
+  }
+</style>

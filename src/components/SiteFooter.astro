@@ -1,0 +1,40 @@
+---
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+  <div class="inner">
+    <p>
+      © {year} 谭佳欣 · <span class="mono">tanjiaxin</span>
+    </p>
+    <p class="muted">视频托管于第三方平台，本站仅做展示与嵌入。</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--border);
+    padding: 2rem 0;
+    margin-top: auto;
+  }
+
+  .inner {
+    width: min(1100px, 100% - 2rem);
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .inner p {
+    margin: 0.35rem 0;
+    font-size: 0.9rem;
+  }
+
+  .muted {
+    color: var(--muted);
+    font-size: 0.85rem !important;
+  }
+
+  .mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  }
+</style>

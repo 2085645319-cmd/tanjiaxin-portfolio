@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import WorkCard from '../components/WorkCard.astro';
+import { works } from '../data/works';
+
+const byCategory = works.reduce<Record<string, typeof works>>((acc, w) => {
+  if (!acc[w.category]) acc[w.category] = [];
+  acc[w.category].push(w);
+  return acc;
+}, {});
+
+const categories = Object.keys(byCategory).sort();
+---
+
+<Layout
+  title="作品 — 谭佳欣（tanjiaxin）"
+  description="谭佳欣的视频作品列表，含宣传片与短片。"
+>
+  <header class="hero">
+    <p class="eyebrow">视频作品集</p>
+    <h1>谭佳欣</h1>
+    <p class="lead">
+      下面是精选作品。每张卡片可进入详情页；待视频链接就绪后，将在页面内嵌入各平台官方播放器。
+    </p>
+  </header>
+
+  {
+    categories.map((cat) => (
+      <section class="section" aria-labelledby={`cat-${cat.replace(/\s+/g, '-')}`}>
+        <h2 id={`cat-${cat.replace(/\s+/g, '-')}`} class="section-title">
+          {cat}
+        </h2>
+        <div class="grid">
+          {byCategory[cat].map((work) => (
+            <WorkCard work={work} />
+          ))}
+        </div>
+      </section>
+    ))
+  }
+</Layout>
+
+<style>
+  .hero {
+    margin-bottom: 2.5rem;
+  }
+
+  .eyebrow {
+    margin: 0 0 0.5rem;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+  }
+
+  .lead {
+    margin: 0;
+    max-width: 42rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+  }
+
+  .section {
+    margin-bottom: 2.75rem;
+  }
+
+  .section-title {
+    margin: 0 0 1rem;
+    font-size: 1.25rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.5rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  @media (min-width: 720px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
