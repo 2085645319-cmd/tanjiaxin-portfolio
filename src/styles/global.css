@@ -43,6 +43,7 @@ body {
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
+  font-family: 'Merriweather', 'Noto Serif SC',var(--font-sans);
 }
 
 #main {

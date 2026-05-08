@@ -28,6 +28,9 @@ const canonicalURL = Astro.site
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Noto+Serif+SC:wght@200..900&display=swap" rel="stylesheet">
     <link rel="icon" type="image/svg+xml" href={sitePath('favicon.svg')} />
   </head>
   <body>
