@@ -5,85 +5,247 @@ import { sitePath } from '../lib/sitePath';
 
 <Layout
   title="关于 — 谭佳欣（tanjiaxin）"
-  description="谭佳欣 — 中国传媒大学智能科学与技术专业；媒体融合与传播国家重点实验室直属实验班。"
+  description="谭佳欣 · AI赋能内容产业 · 中国传媒大学智能科学与技术专业 · 媒体融合与传播国家重点实验室实验班"
 >
-  <article class="prose">
-    <h1>关于</h1>
-
-    <figure class="profile">
-      <img
-        class="profile-img"
-        src={sitePath('images/profile.jpg')}
-        alt="谭佳欣"
-        width={560}
-        height={700}
-        loading="eager"
-      />
-    </figure>
-
-    <div class="bio">
-      <p class="name-line"><strong>谭佳欣</strong>（<span class="mono">tanjiaxin</span>）</p>
-      <p>
-        中国传媒大学<strong>智能科学与技术</strong>专业本科在读。加入<strong>媒体融合与传播国家重点实验室</strong>直属实验班。
-      </p>
-      <p>
-        该实验室为国家科技部批准建设的四个「媒体融合与传播」类国家重点实验室之一，亦是其中<strong>唯一由高校作为依托单位</strong>的实验室。
-      </p>
+  <article class="about-page">
+    <!-- 英雄区：左图右文（杂志感） -->
+    <div class="hero">
+      <div class="hero-image">
+        <img
+          src={sitePath('images/profile.jpg')}
+          alt="谭佳欣"
+          class="profile-img"
+          loading="eager"
+        />
+      </div>
+      <div class="hero-content">
+        <h1 class="about-title">About <span class="accent">Me</span></h1>
+        <p class="tagline">AI赋能内容产业 · 视频创作者</p>
+        <p class="intro">
+          中国传媒大学<strong>智能科学与技术</strong>专业本科在读<br />
+          媒体融合与传播国家重点实验室直属实验班
+        </p>
+        <div class="contact-info">
+          <span>📞 18208113780</span>
+          <span>✉️ 2085645319@qq.com</span>
+        </div>
+      </div>
     </div>
+
+    <!-- 下方：双栏信息网格（秩序感 + 清秀排版） -->
+    <div class="info-grid">
+      <!-- 左栏 -->
+      <div class="grid-col">
+        <section>
+          <h2 class="section-title">教育背景</h2>
+          <p><strong>中国传媒大学</strong> · 智能科学与技术 本科<br />媒体融合与传播国家重点实验室直属实验班</p>
+        </section>
+
+        <section>
+          <h2 class="section-title">AI工具与技术</h2>
+          <ul class="skill-list">
+            <li>AI图像/视频生成：Midjourney, Stable Diffusion, ComfyUI, Runway, 可灵, Pika</li>
+            <li>后期与设计：剪映, Premiere, Photoshop</li>
+            <li>编程能力：Python, C++</li>
+            <li>大语言模型应用：ChatGPT, DeepSeek, Kimi, Dify, Coze</li>
+            <li>办公与数据：Excel, Notion</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2 class="section-title">语言能力</h2>
+          <p>大学英语六级 (CET-6)</p>
+        </section>
+
+        <section>
+          <h2 class="section-title">其他能力</h2>
+          <p>驾驶证 C 照</p>
+        </section>
+      </div>
+
+      <!-- 右栏 -->
+      <div class="grid-col">
+        <section>
+          <h2 class="section-title">项目与创作</h2>
+          <div class="project-item">
+            <p class="project-period">2024.11 – 至今</p>
+            <p class="project-name">国重实验室实验班项目</p>
+            <p>“会用AI做传播、用数据理解社会、用技术改变媒体”<br>
+            独立完成数字人形象采集、模型生成；基于Coze/Dify搭建AI智能体。</p>
+          </div>
+          <div class="project-item">
+            <p class="project-period">2025.09 – 至今</p>
+            <p class="project-name">《山海经》长剧动画项目</p>
+            <p>剧本扩写、世界观设定，LoRA模型适配，建立提示词库与资产表；产出场景概念图与角色定稿。</p>
+          </div>
+          <div class="project-item">
+            <p class="project-period">2025.11</p>
+            <p class="project-name">小娇韵诗AIGC创新大赛 · 三等奖</p>
+            <p>视觉海报及动态短视频物料，提交完整AIGC工作流SOP文档。</p>
+          </div>
+          <div class="project-item">
+            <p class="project-period">2026.03</p>
+            <p class="project-name">商业化AIGC宣传片 · 康养酒店概念片</p>
+            <p>独立完成AI图像生成、图生视频、后期剪辑与音效设计。</p>
+          </div>
+        </section>
+
+        <section>
+          <h2 class="section-title">个人特色</h2>
+          <p>✓ 系统AI理论基础与一线AIGC实操经验<br>
+          ✓ 商业化作品的AI智能体搭建与自动化工作流<br>
+          ✓ 对AI在传媒/营销交叉领域有独特见解<br>
+          ✓ 性格开朗，团队协作，有明确职业规划</p>
+        </section>
+
+        <section>
+          <h2 class="section-title">校园经历</h2>
+          <p><strong>中国传媒大学 学院宣传中心主编</strong><br>
+          培训并组织AI工具分享会；运营学院公众号；统筹跨部门云端任务管理流程。</p>
+        </section>
+      </div>
+    </div>
+
+    <div class="bottom-space"></div>
   </article>
 </Layout>
 
 <style>
-  .prose {
-    max-width: 36rem;
+  .about-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem 4rem;
   }
 
-  .prose h1 {
-    margin-top: 0;
+  /* 左图右文英雄区 */
+  .hero {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
   }
-
-  .profile {
-    margin: 1.5rem 0 1.25rem;
-    padding: 0;
-    border-radius: var(--radius);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    background: var(--surface);
-    max-width: 22rem;
+  .hero-image {
+    flex: 1.2;
+    min-width: 180px;
   }
-
   .profile-img {
     width: 100%;
     height: auto;
-    vertical-align: middle;
-    display: block;
-    aspect-ratio: 4 / 5;
+    border-radius: 1.5rem;
     object-fit: cover;
+    aspect-ratio: 4 / 5;   /* 竖构图，适合半身照/证件照 */
+    box-shadow: 0 20px 30px -12px rgba(0,0,0,0.08);
+    border: 1px solid var(--border);
   }
-
-  .bio {
-    margin-top: 0.5rem;
+  .hero-content {
+    flex: 1;
   }
-
-  .bio p {
-    margin: 0 0 1rem;
+  .about-title {
+    font-size: 3.2rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.5rem;
+  }
+  .about-title .accent {
+    color: #b87c4a; /* 深金棕点缀 */
+  }
+  .tagline {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: #b87c4a;
+    margin-bottom: 0.75rem;
+  }
+  .intro {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
     color: var(--muted);
-    line-height: 1.75;
+  }
+  .contact-info {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    font-family: monospace;
+    color: var(--muted);
   }
 
-  .name-line {
-    margin: 0 0 1rem !important;
-    color: var(--text) !important;
-    font-size: 1.05rem;
+  /* 双栏网格 */
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.5rem;
+    border-top: 1px solid var(--border);
+    padding-top: 2.5rem;
+  }
+  @media (max-width: 768px) {
+    .hero {
+      flex-direction: column;
+      text-align: center;
+    }
+    .contact-info {
+      justify-content: center;
+    }
+    .info-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
   }
 
-  .mono {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.95em;
+  .section-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    border-left: 4px solid #b87c4a;
+    padding-left: 0.75rem;
+    margin: 1.8rem 0 1rem 0;
+  }
+  .section-title:first-of-type {
+    margin-top: 0;
   }
 
-  .bio strong {
-    color: var(--text);
-    font-weight: 650;
+  .skill-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .skill-list li {
+    margin-bottom: 0.6rem;
+    padding-left: 1rem;
+    position: relative;
+  }
+  .skill-list li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: #b87c4a;
+  }
+
+  .project-item {
+    margin-bottom: 1.5rem;
+  }
+  .project-period {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #b87c4a;
+    font-weight: 500;
+    margin-bottom: 0.2rem;
+  }
+  .project-name {
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+
+  .bottom-space {
+    height: 2rem;
+  }
+
+  /* 响应式微调 */
+  @media (max-width: 640px) {
+    .about-title {
+      font-size: 2.5rem;
+    }
+    .about-page {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 </style>
