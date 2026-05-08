@@ -13,6 +13,6 @@ if (!base || base === '/') {
 }
 
 export default defineConfig({
-  site,
-  base,
+  site: 'https://2085645319-cmd.github.io',
+  base: '/tanjiaxin-portfolio/',
 });
