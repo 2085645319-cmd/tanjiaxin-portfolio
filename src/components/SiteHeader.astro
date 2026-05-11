@@ -3,13 +3,13 @@ import { sitePath } from '../lib/sitePath';
 
 const links = [
   { href: sitePath(''), label: '作品' },
-  { href: sitePath('about'), label: '关于' },
+  { href: sitePath('about'), label: '关于我' },
 ];
 ---
 
 <header class="header">
   <div class="inner">
-    <a href={sitePath('')} class="brand focus-ring">tanjiaxin</a>
+    <a href={sitePath('')} class="brand focus-ring">Tan Jiaxin</a>
     <nav class="nav" aria-label="主导航">
       <ul>
         {
@@ -49,7 +49,6 @@ const links = [
   .brand {
     font-weight: 700;
     letter-spacing: 0.04em;
-    text-transform: lowercase;
     color: var(--text);
     text-decoration: none;
   }

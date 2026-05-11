@@ -13,7 +13,7 @@ const categories = Object.keys(byCategory).sort();
 ---
 
 <Layout
-  title="作品 — 谭佳欣（tanjiaxin）"
+  title="作品 — 谭佳欣（Tan Jiaxin）"
   description="谭佳欣的视频作品列表，含宣传片与短片。"
 >
   <header class="hero">
@@ -30,9 +30,9 @@ const categories = Object.keys(byCategory).sort();
         <h2 id={`cat-${cat.replace(/\s+/g, '-')}`} class="section-title">
           {cat}
         </h2>
-        <div class="grid">
+        <div class="work-grid">
           {byCategory[cat].map((work) => (
-            <WorkCard work={work} />
+            <WorkCard key={work.slug} work={work} />
           ))}
         </div>
       </section>
@@ -75,14 +75,19 @@ const categories = Object.keys(byCategory).sort();
     padding-bottom: 0.5rem;
   }
 
-  .grid {
-    display: grid;
-    gap: 1.25rem;
-  }
+  .work-grid {
+  column-count: 2;          /* 默认2列，桌面可增加 */
+  column-gap: 1.5rem;
+}
 
-  @media (min-width: 720px) {
-    .grid {
-      grid-template-columns: 1fr 1fr;
-    }
+@media (min-width: 768px) {
+  .work-grid {
+    column-count: 3;
   }
+}
+@media (min-width: 1024px) {
+  .work-grid {
+    column-count: 4;
+  }
+}
 </style>

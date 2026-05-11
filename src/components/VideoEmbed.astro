@@ -9,7 +9,7 @@ interface Props {
   pendingMessage?: string;
 }
 
-const { embedUrl, poster, title, pendingMessage = '视频嵌入链接稍后更新' } = Astro.props;
+const { embedUrl, poster, title, pendingMessage = '视频嵌入链接尚未更新，请点击在原平台打开' } = Astro.props;
 const posterSrc = sitePath(poster.replace(/^\//, ''));
 const hasEmbed = Boolean(embedUrl?.trim());
 const label = `${title} — 视频播放`;

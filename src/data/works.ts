@@ -35,8 +35,8 @@ export const works: Work[] = [
     embedUrl: '',
     watchUrl: '',
     poster: '/images/shanhai-baize.jpg',
-    pendingMessage: '该系列尚未完成，故未上传至平台',
-    noWatchMessage: '该系列尚未完成，故未上传至平台',
+    pendingMessage: '该系列尚未完成，故未上传至公开平台',
+    noWatchMessage: '该系列尚未完成，故未上传至公开平台',
   },
   {
     slug: 'jingmo-fadian',
@@ -46,9 +46,33 @@ export const works: Work[] = [
     category: '短片',
     period: '2026.03完成',
     platform: 'bilibili',
-    platformBadge: '待发布',
+    platformBadge: '已发布',
     embedUrl: '',
     watchUrl: '',
     poster: '/images/jingmo-fadian.jpg',
+  },
+  {
+    slug: 'xiaohongshu-video-1',       // 唯一标识，不能重复
+    title: '面霜宣传片',
+    description: '面霜诞生记',
+    category: '短片',                  // 或你需要的分类
+    period: '2025.09',                // 发布时间
+    platform: 'other',                // 因为没有专门的 'xiaohongshu' 类型
+    platformBadge: '已发布',
+    embedUrl: '',                      // 留空，因为无法嵌入
+    watchUrl: 'https://www.xiaohongshu.com/explore/68d2235a000000001301f9a3?app_platform=android&ignoreEngage=true&app_version=9.29.0&share_from_user_hidden=true&xsec_source=app_share&type=video&xsec_token=CBpIZkvr4W2Q6aRtTJuPvo1I0hikLUOJ2kcN8IXikH6tA=&author_share=1&shareRedId=ODc5NDdKN082NzUyOTgwNjdJOTo8SDdL&apptime=1778488968&share_id=30d54ec1982e4ded93f5614c8c1c0867&share_channel=copy_link&appuid=61744e3f000000001f038c1b&xhsshare=CopyLink', // 真实链接
+    poster: '/images/xiaohongshu1.png', // 封面图，稍后放入
+  },
+  {
+    slug: 'xiaohongshu-video-2',
+    title: '面霜宣传片',
+    description: '砰一下就变出来了',
+    category: '短片',
+    period: '2025.09',
+    platform: 'other',
+    platformBadge: '已发布',
+    embedUrl: '',
+    watchUrl: 'https://www.xiaohongshu.com/explore/68d5442c000000001301472f?app_platform=android&ignoreEngage=true&app_version=9.29.0&share_from_user_hidden=true&xsec_source=app_share&type=video&xsec_token=CB5q0E_muWD6CuX8IyhBcRLuAE3XV255Ow1V16YgE_5Qk=&author_share=1&xhsshare=&shareRedId=ODcyRkdHPTk2NzUyOTgwNjgzOTlIPjhA&apptime=1778489375&share_id=e4f9ba1785954553a3ae8ec34b4353b7&share_channel=copy_link',
+    poster: '/images/xiaohongshu2.png',
   },
 ];
