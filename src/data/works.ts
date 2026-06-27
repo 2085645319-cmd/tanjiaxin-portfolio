@@ -33,7 +33,7 @@ export const works: Work[] = [
     platformBadge: '已发布', // 或 '即将上线' 等
     embedUrl: 'https://player.bilibili.com/player.html?isOutside=true&aid=116792659804599&bvid=BV1xu7P6eE7p&cid=39310264318&p=1',
     watchUrl: 'https://www.bilibili.com/video/BV1xu7P6eE7p',
-    poster: '/images/xin-shi-pin.jpg', // 改成实际海报文件名
+    poster: '/images/xin-shi-pin.png', // 改成实际海报文件名
 },
   {
     slug: 'shanhai-baize',
