@@ -24,6 +24,18 @@ export interface Work {
 
 export const works: Work[] = [
   {
+    slug: 'yiguijinchen', 
+    title: '忆归锦尘',
+    description: '2008年5月12日，他站在废墟高处，本来只是来看看。然后他看见了——端热锅冲进废墟的面馆老板，免费拉伤员的出租车司机，用手挖碎石的母亲......一个忘了人间数千年的神，第一次被凡人触动。',
+    category: '短片',
+    period: '2026.06', // 改成实际完成时间
+    platform: 'bilibili',
+    platformBadge: '已发布', // 或 '即将上线' 等
+    embedUrl: 'https://player.bilibili.com/player.html?isOutside=true&aid=116792659804599&bvid=BV1xu7P6eE7p&cid=39310264318&p=1',
+    watchUrl: 'https://www.bilibili.com/video/BV1xu7P6eE7p',
+    poster: '/images/xin-shi-pin.jpg', // 改成实际海报文件名
+},
+  {
     slug: 'shanhai-baize',
     title: '山海经先导片——白泽',
     description:
@@ -47,8 +59,8 @@ export const works: Work[] = [
     period: '2026.03完成',
     platform: 'bilibili',
     platformBadge: '已发布',
-    embedUrl: '',
-    watchUrl: '',
+    embedUrl: 'https://player.bilibili.com/player.html?isOutside=true&aid=116554658219391&bvid=BV1MR5W69EvF&cid=38254151185&p=1',
+    watchUrl: 'https://www.bilibili.com/video/BV1MR5W69EvF',
     poster: '/images/jingmo-fadian.jpg',
   },
   {
